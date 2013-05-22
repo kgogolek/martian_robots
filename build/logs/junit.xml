@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Mars" tests="43" assertions="95" failures="0" errors="0" time="0.977657">
+    <testsuite name="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" fullPackage="Tests.Unit" tests="9" assertions="17" failures="0" errors="0" time="0.312130">
+      <testcase name="testGetError" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="9" assertions="2" time="0.006804"/>
+      <testcase name="testHasErrors" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="18" assertions="2" time="0.005037"/>
+      <testcase name="testHasError" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="27" assertions="2" time="0.002910"/>
+      <testcase name="testAddErrors" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="35" assertions="1" time="0.002493"/>
+      <testcase name="testStartWithoutErrors" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="47" assertions="3" time="0.159081"/>
+      <testcase name="testInit" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="73" assertions="4" time="0.125783"/>
+      <testcase name="testGetRobot" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="110" assertions="1" time="0.003748"/>
+      <testcase name="testGetGrid" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="116" assertions="1" time="0.002528"/>
+      <testcase name="testClear" class="Tests_Unit_MissionTest" file="/Applications/MAMP/htdocs/Mars/Tests/Controllers/MissionTest.php" line="122" assertions="1" time="0.003745"/>
+    </testsuite>
+    <testsuite name="Tests_Unit_GridTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/GridTest.php" fullPackage="Tests.Unit" tests="3" assertions="7" failures="0" errors="0" time="0.032863">
+      <testcase name="testSetParams" class="Tests_Unit_GridTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/GridTest.php" line="7" assertions="2" time="0.026390"/>
+      <testcase name="testValidateCorrect" class="Tests_Unit_GridTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/GridTest.php" line="22" assertions="1" time="0.002474"/>
+      <testcase name="testValidateIncorrect" class="Tests_Unit_GridTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/GridTest.php" line="29" assertions="4" time="0.003999"/>
+    </testsuite>
+    <testsuite name="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" fullPackage="Tests.Unit" tests="31" assertions="71" failures="0" errors="0" time="0.632664">
+      <testcase name="testMapDirections" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="7" assertions="1" time="0.002412"/>
+      <testcase name="testSetGetGrid" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="13" assertions="1" time="0.002479"/>
+      <testcase name="testSetParams" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="22" assertions="2" time="0.058066"/>
+      <testcase name="testSetPosition" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="47" assertions="5" time="0.059909"/>
+      <testcase name="testSetPositionDoesntValidate" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="75" assertions="5" time="0.023431"/>
+      <testcase name="testSetInstructions" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="99" assertions="3" time="0.018979"/>
+      <testcase name="testSetInstructionsDoesntValidate" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="113" assertions="3" time="0.014833"/>
+      <testcase name="testValidateInstructions" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="127" assertions="3" time="0.003736"/>
+      <testcase name="testDrive" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="139" assertions="2" time="0.047572"/>
+      <testcase name="testForwardEast" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="164" assertions="2" time="0.026815"/>
+      <testcase name="testForwardWest" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="183" assertions="2" time="0.022432"/>
+      <testcase name="testForwardNorth" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="202" assertions="2" time="0.069519"/>
+      <testcase name="testForwardSouth" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="221" assertions="2" time="0.022009"/>
+      <testcase name="testMoveForward" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="240" assertions="2" time="0.013597"/>
+      <testcase name="testMoveForwardOutOfGrid" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="253" assertions="2" time="0.016240"/>
+      <testcase name="testCheckIfLostHasScent" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="268" assertions="2" time="0.032863"/>
+      <testcase name="testCheckIfLostNoScent" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="285" assertions="3" time="0.044802"/>
+      <testcase name="testGetStep" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="304" assertions="4" time="0.004128"/>
+      <testcase name="testTurn" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="321" assertions="4" time="0.004098"/>
+      <testcase name="testValidatePositionNotEnoughParams" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="342" assertions="2" time="0.020409"/>
+      <testcase name="testValidatePositionIncorrectLessThan0" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="356" assertions="2" time="0.027032"/>
+      <testcase name="testValidatePositionCorrect" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="376" assertions="2" time="0.027080"/>
+      <testcase name="testValidatePositionIncorrectOutsideGrid" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="396" assertions="2" time="0.027275"/>
+      <testcase name="testGetPositionArray" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="416" assertions="1" time="0.002562"/>
+      <testcase name="testToString" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="423" assertions="2" time="0.023022"/>
+      <testcase name="testGetLostString" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="443" assertions="2" time="0.003076"/>
+      <testcase name="testGetNumericDirection" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="452" assertions="2" time="0.002995"/>
+      <testcase name="testGetDirectionLetter" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="459" assertions="2" time="0.003130"/>
+      <testcase name="testAddAnotherScent" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="470" assertions="1" time="0.002513"/>
+      <testcase name="testAddScent" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="480" assertions="1" time="0.002553"/>
+      <testcase name="testHasScent" class="Tests_Unit_RobotTest" file="/Applications/MAMP/htdocs/Mars/Tests/Model/RobotTest.php" line="490" assertions="2" time="0.003096"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
