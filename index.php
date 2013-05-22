@@ -23,7 +23,7 @@
     <body>
         <div class="container">
             <h1>Insert Grid coordinates:</h1>
-            <form method="POST" action="/" class="form-horizontal">
+            <form method="POST" action="" class="form-horizontal">
                 <? if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['drive']) && $mission->hasError('grid-y') === false && $mission->hasError('grid-x') === false) { ?>
                     <div class="control-group">
                         <label class="control-label" for="grid-x">Grid right coordinate:</label>
