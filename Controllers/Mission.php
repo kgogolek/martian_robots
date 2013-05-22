@@ -79,8 +79,11 @@ class Mission {
     public function init($params) {
         $errors = $this->getGrid()->setParams((int) $params['grid-x'], (int) $params['grid-y']);
         $this->addErrors($errors);
-        $errors = $this->getRobot()->setParams($params['position'], $params['instructions'], $this->getGrid());
-        $this->addErrors($errors);
+        if(empty($errors))
+        {
+            $errors = $this->getRobot()->setParams($params['position'], $params['instructions'], $this->getGrid());
+            $this->addErrors($errors);
+        }
     }
     
     /**
@@ -152,7 +155,7 @@ class Mission {
     public function clear()
     {
         unset($_SESSION['scent']);
-        header("Location: /");
+        header("Location: http://". $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] );
     }
    
     

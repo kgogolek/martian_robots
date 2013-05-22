@@ -70,7 +70,7 @@ class Tests_Unit_MissionTest extends PHPUnit_Framework_TestCase
         $this->assertNull($mock->start($params));
     }
     
-    public function testInit()
+    public function testInitNoErrors()
     {
         $params = array('grid-x' => 1, 'grid-y' => 2, 'position' => 'foo', 'instructions' => 'bar');
                 
@@ -79,13 +79,13 @@ class Tests_Unit_MissionTest extends PHPUnit_Framework_TestCase
         $grid_mock->expects($this->once())
                   ->method("setParams")
                   ->with(1, 2)
-                  ->will($this->returnValue(array('foo')));
+                  ->will($this->returnValue(array()));
         
         $robot_mock = $this->getMock("Robot", array("setParams"));
         $robot_mock->expects($this->once())
                    ->method("setParams")
                    ->with("foo", "bar", $grid_mock)
-                ->will($this->returnValue(array('bar')));
+                ->will($this->returnValue(array()));
         
         $mock = $this->getMock("Mission", array("getGrid", "getRobot", "addErrors"));
         $mock->expects($this->any())
@@ -98,7 +98,71 @@ class Tests_Unit_MissionTest extends PHPUnit_Framework_TestCase
         
         $mock->expects($this->at(1))
              ->method("addErrors")
+             ->with($this->equalTo(array()));
+        
+        $mock->expects($this->at(4))
+             ->method("addErrors")
+             ->with($this->equalTo(array()));
+        
+        $this->assertNull($mock->init($params));
+    }
+    
+    public function testInitGridErrors()
+    {
+        $params = array('grid-x' => 1, 'grid-y' => 2, 'position' => 'foo', 'instructions' => 'bar');
+                
+        
+        $grid_mock = $this->getMock("Grid", array("setParams"));
+        $grid_mock->expects($this->once())
+                  ->method("setParams")
+                  ->with(1, 2)
+                  ->will($this->returnValue(array('foo')));
+        
+        $mock = $this->getMock("Mission", array("getGrid", "getRobot", "addErrors"));
+        $mock->expects($this->any())
+             ->method("getGrid")
+             ->will($this->returnValue($grid_mock));
+        
+        $mock->expects($this->never())
+             ->method("getRobot")
+             ->will($this->returnValue($robot_mock));
+        
+        $mock->expects($this->at(1))
+             ->method("addErrors")
              ->with($this->equalTo(array('foo')));
+        
+        $this->assertNull($mock->init($params));
+    }
+    
+    public function testInitRobotErrors()
+    {
+        $params = array('grid-x' => 1, 'grid-y' => 2, 'position' => 'foo', 'instructions' => 'bar');
+                
+        
+        $grid_mock = $this->getMock("Grid", array("setParams"));
+        $grid_mock->expects($this->once())
+                  ->method("setParams")
+                  ->with(1, 2)
+                  ->will($this->returnValue(array()));
+        
+        $robot_mock = $this->getMock("Robot", array("setParams"));
+        $robot_mock->expects($this->once())
+                   ->method("setParams")
+                   ->with("foo", "bar", $grid_mock)
+                ->will($this->returnValue(array('bar')));
+        
+        $mock = $this->getMock("Mission", array("getGrid", "getRobot", "addErrors"));
+        $mock->expects($this->any())
+             ->method("getGrid")
+             ->will($this->returnValue($grid_mock));
+        
+        $mock->expects($this->once())
+             ->method("getRobot")
+             ->will($this->returnValue($robot_mock));
+        
+        $mock->expects($this->at(1))
+             ->method("addErrors")
+             ->with($this->equalTo(array()));
         
         $mock->expects($this->at(4))
              ->method("addErrors")
